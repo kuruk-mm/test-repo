@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
-      - run: |
+        run: |
         echo "building"
         echo "secret: + ${{ secrets.SECRETTEST }}""

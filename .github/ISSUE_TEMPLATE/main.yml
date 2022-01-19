@@ -1,0 +1,9 @@
+on: push
+ß
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        echo "building"
+        echo "secret: + ${{ secrets.SECRETTEST }}""

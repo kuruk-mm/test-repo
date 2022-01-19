@@ -7,4 +7,6 @@ jobs:
       - name: build
         run: |
           echo "building"
-          echo "secret: + ${{ secrets.SECRETTEST }}"
+          echo "secret: ${{ secrets.SECRETTEST }}"
+          secret=${{ secrets.SECRETTEST }}
+          echo "secret cut: ${secret:1:3}"

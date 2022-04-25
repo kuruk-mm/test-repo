@@ -1,12 +1,9 @@
-on: push
+on: [repository_dispatch]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: build
-        run: |
-          echo "building"
-          echo "secret: ${{ secrets.SECRETTEST }}"
-          secret=${{ secrets.SECRETTEST }}
-          echo "secret cut: ${secret:1:3}"
+  scan:
+   runs-on: ubuntu-latest
+   steps:
+     - name: security scan
+       run: |
+        echo 'Hello world'

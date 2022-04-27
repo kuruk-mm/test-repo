@@ -11,10 +11,9 @@ jobs:
     - uses: hmarr/debug-action@v2
     - name: Download artifacts
       run: |
-        curl -o unity-renderer-windows.zip https://renderer-artifacts.decentraland.org/desktop/main/unity-renderer-windows.zip
-        curl -o unity-renderer-mac.zip https://renderer-artifacts.decentraland.org/desktop/main/unity-renderer-mac.zip
-        curl -o unity-renderer-linux.zip https://renderer-artifacts.decentraland.org/desktop/main/unity-renderer-linux.zip
         echo ${{ github.sha }}
+        echo ${{ github.event.deployment.ref }}
+        echo ${{ github.event.deployment.sha }}
     - name: Set version
       shell: bash
       run: |

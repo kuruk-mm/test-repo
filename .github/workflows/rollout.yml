@@ -1,6 +1,5 @@
 name: Rollout
 
-name: "Repo dispatch"
 on:
   repository_dispatch:
     types: [deploy]

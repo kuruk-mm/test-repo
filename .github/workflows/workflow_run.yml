@@ -1,0 +1,13 @@
+on:
+  workflow_run:
+    workflows: [ci/circleci: build]
+    types:
+      - completed
+
+jobs:
+  scan:
+   runs-on: ubuntu-latest
+   steps:
+     - name: security scan
+       run: |
+        echo 'Hello worldd'

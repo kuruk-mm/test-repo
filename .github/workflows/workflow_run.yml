@@ -1,13 +1,25 @@
+name: Rollout
+
+name: "Repo dispatch"
 on:
-  workflow_run:
-    workflows: [build]
-    types:
-      - completed
+  repository_dispatch:
+    types: [deploy]
 
 jobs:
-  scan:
+  deploy:
    runs-on: ubuntu-latest
    steps:
-     - name: security scan
-       run: |
-        echo 'Hello worldd'
+    - uses: hmarr/debug-action@v2
+    - name: Download artifacts
+      run: |
+        curl -o unity-renderer-windows.zip https://renderer-artifacts.decentraland.org/desktop/main/unity-renderer-windows.zip
+        curl -o unity-renderer-mac.zip https://renderer-artifacts.decentraland.org/desktop/main/unity-renderer-mac.zip
+        curl -o unity-renderer-linux.zip https://renderer-artifacts.decentraland.org/desktop/main/unity-renderer-linux.zip
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          unity-renderer-windows.zip
+          unity-renderer-mac.zip
+          unity-renderer-linux.zip

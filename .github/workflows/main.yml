@@ -1,6 +1,6 @@
 on:
-  repository_dispatch:
-    types: [on-demand-test]
+  check_run:
+    types: [rerequested, completed]
 
 jobs:
   scan:
@@ -9,3 +9,5 @@ jobs:
      - name: security scan
        run: |
         echo 'Hello world'
+        echo ${{ github.event.deployment.task }}
+        echo ${{ github.event.deployment_status.state }}

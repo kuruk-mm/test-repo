@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: [ci/circleci: build]
+    workflows: [build]
     types:
       - completed
 

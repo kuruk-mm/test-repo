@@ -1,6 +1,6 @@
 on:
   check_run:
-    types: [rerequested, completed]
+    types: [created, rerequested, completed]
 
 jobs:
   scan:

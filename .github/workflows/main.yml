@@ -1,3 +1,4 @@
+name: Checkrun
 on:
   check_run:
     types: [created, rerequested, completed]
@@ -10,5 +11,3 @@ jobs:
      - name: security scan
        run: |
         echo 'Hello worldd'
-        echo ${{ github.event.deployment.task }}
-        echo ${{ github.event.deployment_status.state }}

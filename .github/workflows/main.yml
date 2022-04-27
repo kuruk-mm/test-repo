@@ -8,6 +8,6 @@ jobs:
    steps:
      - name: security scan
        run: |
-        echo 'Hello world'
+        echo 'Hello worldd'
         echo ${{ github.event.deployment.task }}
         echo ${{ github.event.deployment_status.state }}

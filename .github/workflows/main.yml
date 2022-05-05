@@ -1,13 +1,12 @@
 name: Checkrun
+
 on:
-  check_run:
-    types: [created, rerequested, completed]
-  check_suite:
-    types: [completed]
+  check_run: 
+    types: [ completed ]
+
 jobs:
   scan:
    runs-on: ubuntu-latest
    steps:
-     - name: security scan
-       run: |
-        echo 'Hello worldd'
+      - uses: hmarr/debug-action@v2
+
